@@ -1,0 +1,11 @@
+
+tr:hover{
+    background-color:rgb(23,25,36);
+}
+
+th{
+    border-bottom: 1px solid rgb(34,37,49);
+    font-size: 14px;
+    padding:26px 4px;
+    line-height: 16px;
+}

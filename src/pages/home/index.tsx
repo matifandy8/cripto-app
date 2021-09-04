@@ -1,6 +1,6 @@
 import ListCurrencies from "../../components/currencies/ListCurrencies"
 
-const Home = () => {
+const Home: React.FC = () => {
     return (
         <div>
             <ListCurrencies/>
