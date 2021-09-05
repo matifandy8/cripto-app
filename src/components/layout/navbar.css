@@ -1,0 +1,67 @@
+.navbar{
+    height:60px;
+    background-color:rgb(23 23 26);  
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.navbar__logo{
+    color:white;
+    font-size:24px;
+    margin-left:15px;
+    font-weight: 600;
+
+}
+
+.navbar__links{
+  
+}
+.navbar__links ul{
+    display:flex;
+    list-style:none;
+}
+.navbar__links ul li {
+    display:flex;
+    margin-left:2rem;
+}
+.navbar__links ul li a{
+    text-decoration: none;
+    line-height: 1.5;
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 14px;
+}
+.navbar__links ul li a:hover{
+    color: rgb(97, 136, 255);
+    transition: all 0.3s ease 0s;
+}
+
+.navbar__auth{
+   margin-right:15px;
+}
+
+.login{
+    color: rgb(255, 255, 255);
+   border:none;
+   background: transparent;
+   padding:10px 15px;
+   border-radius: 8px;
+   font-weight: 600;
+   margin-right:15px;
+
+}
+.login:hover{
+    background: rgb(115, 148, 247);
+}
+.signin:hover{
+    background: rgb(115, 148, 247);
+}
+.signin{
+    color: rgb(255, 255, 255);
+   border:none;
+   background: rgb(97, 136, 255);
+   padding:10px 15px;
+   border-radius: 8px;
+   font-weight: 600;
+}
