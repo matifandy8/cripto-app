@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { Get } from "../../services/publicApiService";
 import RowCurrency from "./RowCurrency";
 
+
 const ListCurrencies: React.FC = () => {
   const [currencies, setCurrencies] = useState([]);
  
   useEffect(() => {
-    console.log(Get("/currencies"));
-    // Get("/currencies").then(res => setCurrencies(res.data.data));
+    Get("/currencies").then(res => setCurrencies(res));
   }, []);
   return (
     <div className="ListCurrencies">
