@@ -14,11 +14,17 @@ const listOptions = [
   const Buttons = () => {
     const [activeLink, setActiveLink] = useState(null);
   
+    const handleChange = (e:any) => {
+      console.log('value', e.target.value); // output: “value somevalue”
+      alert('hi');
+    }
     const renderList = () => {
       return listOptions.map((option, index:any) => {
         return (
           <button
+            value={`${option.text}`}
             key={index}
+            onChange={handleChange}
             onClick={() => setActiveLink(index)}
             className={`tabletag__button ${
               activeLink === index ? "active" : ""

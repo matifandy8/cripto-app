@@ -1,13 +1,17 @@
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
 import './App.css';
-import Layout from './components/layout';
-import Home from './pages/home';
+import { Public } from './router/public';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Layout>
-      <Home/>
-      </Layout>
+      <Router>
+    <div className="App">
+      <Public />
+    </div>
+    </Router>
     </div>
   );
 }

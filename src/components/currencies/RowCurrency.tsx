@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Currency } from "../../types/types";
 import "./RowCurrency.css"
 
