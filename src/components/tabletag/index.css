@@ -1,0 +1,35 @@
+.tabletag{
+    color:white;
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.tabletag__button{
+    font-weight: 600;
+    width: auto;
+    height: 32px;
+    font-size: 12px;
+    padding: 0px 16px;
+    line-height: 18px;
+    margin-right:20px;
+    background-color: transparent;
+    border:none;
+    color:white;
+    cursor: pointer;
+}
+.tabletag__button:hover{
+    background-color: rgb(19, 19, 32);
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    outline: 0px;
+}
+
+.active{
+    background-color: rgb(19, 19, 32);
+    align-items: center;
+    border-radius: 8px;
+    justify-content: center;
+    outline: 0px;
+}
