@@ -14,7 +14,6 @@ export const Get = async(path:string, id = null) => {
 	const finalPath = id ? `${path}/${id}` : path
 	try {
 		const resp = await axiosIntance.get<any>(finalPath)
-		console.log(resp.data.data)
 		return resp.data.data
 	} catch (error) {
 		return error

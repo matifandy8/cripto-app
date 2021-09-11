@@ -39,7 +39,6 @@ const ListCurrencies: React.FC = () => {
             <th className="ListCurrencies__tr">Circulating Supply</th>
           </tr>
         </thead>
-        
         <RowCurrency currencies={currencies} searchTerm={debouncedSearchTerm} />
       </table>
     </div>
