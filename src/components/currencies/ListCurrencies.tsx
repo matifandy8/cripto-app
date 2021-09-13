@@ -1,19 +1,22 @@
 import "./ListCurrencies.css";
 import { useEffect, useState } from "react";
-import { Get } from "../../services/publicApiService";
 import RowCurrency from "./RowCurrency";
 import useDebounce from "../../utils/usedebounce";
+import { useSelector, useDispatch } from "react-redux"
+import { getCurrencies, currenciesSelector } from "../../features/CurrencySlice";
 
 const ListCurrencies: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [currencies, setCurrencies] = useState([]);
   
   const debouncedSearchTerm = useDebounce(searchTerm, 1000);
+  const dispatch = useDispatch()
+  const { currencies, loading, errors } = useSelector(currenciesSelector)
 
+  console.log(currencies, loading, errors)
 
   useEffect(() => {
-    Get("/currencies").then((res) => setCurrencies(res));
-  }, []);
+    dispatch(getCurrencies())
+  }, [dispatch])
 
   return (
     <div className="ListCurrencies">
