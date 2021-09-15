@@ -1,8 +1,12 @@
 import { useState } from "react";
+import ModalLogin from "../auth/login/ModalLogin";
+import ModalRegister from "../auth/register/ModalRegister";
 import "./navbar.css";
 
 const Navbar: React.FC = () => {
- 
+  const [registerModalOpen, setRegisterModalOpen] = useState(false);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+
 
   return (
     <div className="navbar">
@@ -24,9 +28,17 @@ const Navbar: React.FC = () => {
         </ul>
       </div>
       <div className="navbar__auth">
-            <button className="login">Log In</button>
-            <button className="signin">Sign Up</button>
+            <button className="login" onClick={() => {
+          setLoginModalOpen(true);
+        }}>Log In</button>
+            <button className="signin openModalBtn"
+        onClick={() => {
+          setRegisterModalOpen(true);
+        }}>Sign Up</button>
       </div>
+       {registerModalOpen && <ModalRegister setOpenModal={setRegisterModalOpen} />}
+       {loginModalOpen && <ModalLogin setOpenModal={setLoginModalOpen} />}
+
     </div>
   );
 };

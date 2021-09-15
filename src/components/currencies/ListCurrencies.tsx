@@ -4,7 +4,6 @@ import RowCurrency from "./RowCurrency";
 import useDebounce from "../../utils/usedebounce";
 import { useSelector, useDispatch } from "react-redux"
 import { getCurrencies, currenciesSelector } from "../../features/CurrencySlice";
-import ModalRegister from "../register/ModalRegister";
 
 const ListCurrencies: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -21,7 +20,6 @@ const ListCurrencies: React.FC = () => {
 
   return (
     <div className="ListCurrencies">
-      <ModalRegister/>
       <div className="searchbar">
           <input
           className="searchbar__input"
