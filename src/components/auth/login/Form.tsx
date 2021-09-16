@@ -1,15 +1,42 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "../Form.css"
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { clearState, loginUser, userSelector } from "../../../features/UserSlice";
+import { useHistory } from "react-router-dom";
 
-
- const Form:React.FC = () => {
-    type FormFields={
+ type FormFields={
         password:string,
         email:string
     }
+ const Form:React.FC = () => {
+   
     const { register, handleSubmit,formState: { errors }} = useForm<FormFields>();
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const { isFetching, isSuccess, isError, errorMessage }:any = useSelector(
+      userSelector
+    );
+    
+  
+    useEffect(() => {
+      return () => {
+        dispatch(clearState());
+      };
+    }, []);
+  
+    useEffect(() => {
+      if (isError) {
+        dispatch(clearState());
+      }
+  
+      if (isSuccess) {
+        dispatch(clearState());
+        history.push('/');
+      }
+    }, [isError, isSuccess]);
     const submitFormValues=(values:any)=>{
+        dispatch(loginUser(values));
         console.log(values)
     }
     const errorFormValues=(errors:any)=>{

@@ -6,13 +6,11 @@ import { Public } from './router/public';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
       <Router>
     <div className="App">
       <Public />
     </div>
     </Router>
-    </div>
   );
 }
 
