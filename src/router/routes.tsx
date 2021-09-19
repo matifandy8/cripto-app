@@ -1,6 +1,8 @@
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import {  Redirect, Route, Switch } from "react-router-dom";
 import Layout from "../components/layout";
 import Home from "../pages/home";
+import Profile from "../pages/profile";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -11,6 +13,8 @@ export const Public: React.FC = () => {
       <Layout>       
          <Switch>
         <Route exact path="/" component={Home} />
+        <PrivateRoute  path="/profile"  component={Profile}  exact  />
+
         {/* <Route exact path="/fiats" component={Fiats} /> */}
         <Redirect to="/" />
       </Switch>

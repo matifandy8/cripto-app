@@ -72,7 +72,7 @@ export const fetchUserBytoken: any = createAsyncThunk(
   async ({ token }:any, thunkAPI) => {
     try {
       const response = await fetch(
-        'https://mock-user-auth-server.herokuapp.com/api/v1/users',
+        'http://localhost:8000/users/dashboard',
         {
           method: 'GET',
           headers: {
