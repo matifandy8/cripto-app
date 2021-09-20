@@ -5,7 +5,7 @@ export const signupUser: any = createAsyncThunk(
   async ({ email, password }:any, thunkAPI) => {
     try {
       const response = await fetch(
-        'http://localhost:8000/users/register',
+        'https://node---auth.herokuapp.com/users/register',
         {
           method: 'POST',
           headers: {
@@ -39,7 +39,7 @@ export const loginUser: any = createAsyncThunk(
   async ({ email, password }:any, thunkAPI) => {
     try {
       const response = await fetch(
-        'http://localhost:8000/users/login',
+        'https://node---auth.herokuapp.com/users/login',
         {
           method: 'POST',
           headers: {
@@ -72,7 +72,7 @@ export const fetchUserBytoken: any = createAsyncThunk(
   async ({ token }:any, thunkAPI) => {
     try {
       const response = await fetch(
-        'http://localhost:8000/users/dashboard',
+        'https://node---auth.herokuapp.com/users/dashboard',
         {
           method: 'GET',
           headers: {

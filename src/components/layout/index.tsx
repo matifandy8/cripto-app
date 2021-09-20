@@ -6,7 +6,6 @@ const Layout = ({children}: {children: ReactNode}): JSX.Element  => {
   return (
       <>
        <Navbar/>
-       {/* navbar when is login the user */}
        {children}
        <Footer/>
        </>
