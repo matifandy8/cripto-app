@@ -10,6 +10,7 @@ import { CurrencyState} from './features/CurrencySlice';
 import currenciesSliceReducer from "./features/CurrencySlice"
 import { userSlice } from './features/UserSlice';
 
+
 export type AppThunk = ThunkAction<void, CurrencyState, unknown, Action<string>>;
 
 const store = configureStore({
@@ -21,7 +22,7 @@ const store = configureStore({
 
 ReactDOM.render(
   <React.StrictMode>
-        <Provider store={store}>
+        <Provider store={store} >
     <App />
     </Provider>
 

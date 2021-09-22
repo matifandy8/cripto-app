@@ -28,11 +28,14 @@ import { useHistory } from "react-router-dom";
     useEffect(() => {
       if (isError) {
         dispatch(clearState());
+        // alert error
       }
   
       if (isSuccess) {
         dispatch(clearState());
+        // alert success
         history.push('/');
+        window.location.reload(); 
       }
     }, [isError, isSuccess]);
     const submitFormValues=(values:any)=>{

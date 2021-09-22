@@ -24,8 +24,8 @@ const RowCurrency: React.FC<Props> = ({ currencies, searchTerm }) => {
   const Green = {
     color: "greem",
   } as React.CSSProperties;
-  const getColor = (num: number) => {
-    return num > 0 ? Green : Red;
+      const getColor = (num: number) => {
+        return num > 0 ? Green : Red;
   };
   return (
     <tbody>
