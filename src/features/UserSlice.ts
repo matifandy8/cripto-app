@@ -119,10 +119,11 @@ export const userSlice = createSlice({
   extraReducers: {
     [signupUser.fulfilled]: (state: any, { payload }:any) => {
       console.log('payload', payload);
+      state.email = payload.email;
+      state.username = payload.name;
       state.isFetching = false;
       state.isSuccess = true;
-      state.email = payload.user.email;
-      state.username = payload.user.name;
+      return state;
     },
     [signupUser.pending]: (state: any) => {
       state.isFetching = true;
@@ -130,7 +131,7 @@ export const userSlice = createSlice({
     [signupUser.rejected]: (state: any, { payload }:any) => {
       state.isFetching = false;
       state.isError = true;
-      state.errorMessage = payload.message;
+      state.errorMessage = payload.msg;
     },
     [loginUser.fulfilled]: (state: any, { payload }:any) => {
       state.email = payload.email;
@@ -143,7 +144,7 @@ export const userSlice = createSlice({
       console.log('payload', payload);
       state.isFetching = false;
       state.isError = true;
-      state.errorMessage = payload.message;
+      state.errorMessage = "Error email or password incorrect";
     },
     [loginUser.pending]: (state: any) => {
       state.isFetching = true;

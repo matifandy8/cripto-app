@@ -23,7 +23,12 @@
     line-height: 21px;
 }
 .form span{
-    color:rgb(134, 4, 4);
+    display: flex;
+    background-color: #e79898;
+    border-radius: 8px;
+    margin: 3px;
+    padding: 10px 30px;
+    color: red;
 }
 
 .form .button{

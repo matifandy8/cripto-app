@@ -13,7 +13,7 @@
   .modalContainer {
     margin-top:100px;
     width: 500px;
-    height: 500px;
+    height: 520px;
     border-radius: 12px;
     background-color: rgb(34, 37, 49);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -45,3 +45,9 @@
     margin:20px;
   }
   
+  .modalContainer .title h1{
+  margin:0;
+}
+p{
+  margin:0;
+}

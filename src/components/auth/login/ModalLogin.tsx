@@ -18,10 +18,9 @@ function ModalLogin({ setOpenModal }: any) {
         <div className="title">
           <h1>Log In</h1>
           <p>
-          New to CoinMarketCap?  <a href="#">
-         Create an account
-          </a>
+            New to CoinMarketCap? <a href="#">Create an account</a>
           </p>
+          
         </div>
         <div className="body">
           <Form />

@@ -11,8 +11,9 @@ const Navbar: React.FC = () => {
   const history = useHistory();
 
   const handleLogoutClick = () => {
+    alert("Success Logout")
     localStorage.removeItem("token");
-    history.push("/");
+    window.location.reload(); 
   };
 
   const authButton = () => {
