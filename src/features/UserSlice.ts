@@ -19,7 +19,6 @@ export const signupUser: any = createAsyncThunk(
         }
       );
       let data = await response.json();
-      console.log('data', data);
 
       if (response.status === 200) {
         localStorage.setItem('token', data.token);
@@ -53,7 +52,6 @@ export const loginUser: any = createAsyncThunk(
         }
       );
       let data = await response.json();
-      console.log('response', data.token.token);
       if (response.status === 200) {
         localStorage.setItem('token', data.token.token);
         return data;

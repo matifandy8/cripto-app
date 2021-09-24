@@ -50,9 +50,9 @@ const Form: React.FC = () => {
   const submitFormValues = (values: any) => {
     dispatch(signupUser(values));
     console.log(values);
-    // setSuccessStatus(true);
-    // alert("Success");
-    // window.location.reload();
+    setSuccessStatus(true);
+    alert("Success");
+    window.location.reload();
   };
   const errorFormValues = (errors: object) => {
     alert( errors);

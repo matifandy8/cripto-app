@@ -1,37 +1,29 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./buttons.css"
 
 const listOptions = [
-    { text: "DeFi"},
-    { text: "NFT"},
-    { text: "Play To Earn"},
-    { text: "Polkadot"},
-    { text: "BSC"},
-    { text: "Heco"}
+    {route: "/defi", text: "DeFi"},
+    {route: "/nft", text: "NFT"},
+    {route: "/playtoearn", text: "Play To Earn"},
+    {route: "/polkadot", text: "Polkadot"},
+    {route: "/bsc", text: "BSC"},
+    {route: "/heco", text: "Heco"}
 
   ];
   
   const Buttons = () => {
-    const [activeLink, setActiveLink] = useState(null);
-  
-    const handleChange = (e:any) => {
-      console.log('value', e.target.value); // output: “value somevalue”
-      alert('hi');
-    }
+   
     const renderList = () => {
       return listOptions.map((option, index:any) => {
         return (
-          <button
-            value={`${option.text}`}
+          <Link
+          to={option.route}
             key={index}
-            onChange={handleChange}
-            onClick={() => setActiveLink(index)}
-            className={`tabletag__button ${
-              activeLink === index ? "active" : ""
-            }`}
+            className="tabletag__button"
           >
            {option.text}
-          </button>
+          </Link>
         );
       });
     };

@@ -43,7 +43,6 @@ const Form: React.FC = () => {
       dispatch(clearState());
       // alert success
       setSuccessStatus(true);
-      alert("Success");
       window.location.reload();
     }
   }, [isError, isSuccess]);
@@ -61,8 +60,6 @@ const Form: React.FC = () => {
           <AlertSuccess text="Login successfully!" />
         </div>
       )}
-                <AlertSuccess text="Login successfully!" />
-
       <form
         className="form"
         onSubmit={handleSubmit(submitFormValues, errorFormValues)}

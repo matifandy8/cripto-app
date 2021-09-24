@@ -18,15 +18,6 @@ const RowCurrency: React.FC<Props> = ({ currencies, searchTerm }) => {
     });
   };
   const filteredCurrencies = filterCurrencies(currencies, searchTerm);
-  const Red = {
-    color: "red",
-  } as React.CSSProperties;
-  const Green = {
-    color: "greem",
-  } as React.CSSProperties;
-      const getColor = (num: number) => {
-        return num > 0 ? Green : Red;
-  };
   return (
     <tbody>
       {filteredCurrencies.map((currency: Currency) => (
@@ -37,10 +28,10 @@ const RowCurrency: React.FC<Props> = ({ currencies, searchTerm }) => {
             {currency.name} {currency.symbol}
           </th>
           <th>${currency.quote.USD.price.toLocaleString()}</th>
-          <th style={getColor(currency.quote.percent_change_24h)}>
+          <th >
             {currency.quote.USD.percent_change_24h.toFixed(2)}%
           </th>
-          <th style={getColor(currency.quote.percent_change_7d)}>
+          <th >
             {currency.quote.USD.percent_change_7d.toFixed(2)}%
           </th>
           <th>{currency.quote.USD.market_cap.toLocaleString()}</th>
