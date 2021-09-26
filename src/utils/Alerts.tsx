@@ -13,7 +13,7 @@ export const AlertError = ({ text }: { text: string }): JSX.Element => {
   return (
     <div className="error">
       <div className="alert-error">
-        <strong>Error! </strong> {text}
+        <strong></strong> {text}
       </div>
     </div>
   );

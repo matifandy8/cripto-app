@@ -8,7 +8,7 @@ import {
   userSelector,
 } from "../../../features/UserSlice";
 import { useHistory } from "react-router-dom";
-import { AlertSuccess } from "../../../utils/Alerts";
+import { AlertError, AlertSuccess } from "../../../utils/Alerts";
 
 type FormFields = {
   password: string;
@@ -35,7 +35,6 @@ const Form: React.FC = () => {
 
   useEffect(() => {
     if (isError) {
-      alert(errorMessage)
       dispatch(clearState());
     }
 
@@ -58,6 +57,11 @@ const Form: React.FC = () => {
       {successStatus === true && (
         <div className="alerts">
           <AlertSuccess text="Login successfully!" />
+        </div>
+      )}
+      {errorMessage && (
+        <div className="alerts">
+          <AlertError text={errorMessage} />
         </div>
       )}
       <form

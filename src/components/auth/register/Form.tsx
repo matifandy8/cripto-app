@@ -8,7 +8,7 @@ import {
   signupUser,
   userSelector,
 } from "../../../features/UserSlice";
-import { AlertSuccess } from "../../../utils/Alerts";
+import { AlertError, AlertSuccess } from "../../../utils/Alerts";
 
 type FormFields = {
   password: string;
@@ -25,8 +25,7 @@ const Form: React.FC = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const { isFetching, isSuccess, isError, errorMessage }: any =
-    useSelector(userSelector);
+  const { isFetching, isSuccess, isError, errorMessage }: any = useSelector(userSelector);
 
   useEffect(() => {
     return () => {
@@ -44,15 +43,16 @@ const Form: React.FC = () => {
     }
 
     if (isError) {
+      console.log(errorMessage)
       dispatch(clearState());
     }
   }, [isSuccess, isError]);
   const submitFormValues = (values: any) => {
     dispatch(signupUser(values));
     console.log(values);
-    setSuccessStatus(true);
-    alert("Success");
-    window.location.reload();
+    // setSuccessStatus(true);
+    // alert("Success");
+    // window.location.reload();
   };
   const errorFormValues = (errors: object) => {
     alert( errors);
@@ -62,6 +62,11 @@ const Form: React.FC = () => {
       {successStatus === true && (
         <div className="alerts">
           <AlertSuccess text="Register successfully!" />
+        </div>
+      )}
+      {errorMessage && (
+        <div className="alerts">
+          <AlertError text={errorMessage} />
         </div>
       )}
       <form
